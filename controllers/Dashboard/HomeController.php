@@ -4,7 +4,9 @@
 
 class HomeController{
     function index(){
-        view("Dashboard");
+        view("dashboard");
+       
+      // echo "ksdfkldjfkldsj";
     }
 }
 

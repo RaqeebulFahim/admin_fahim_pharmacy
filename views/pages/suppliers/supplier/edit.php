@@ -1,32 +1,18 @@
 <?php
-// print_r($_REQUEST);
+echo Page::title(["title"=>"Edit Supplier"]);
+echo Page::body_open();
+echo Html::link(["class"=>"btn btn-success", "route"=>"supplier", "text"=>"Manage Supplier"]);
+echo Page::context_open();
+echo Form::open(["route"=>"supplier/update"]);
+	echo Form::input(["label"=>"Id","type"=>"hidden","name"=>"id","value"=>"$supplier->id"]);
+	echo Form::input(["label"=>"Name","type"=>"text","name"=>"name","value"=>"$supplier->name"]);
+	echo Form::input(["label"=>"Email","type"=>"text","name"=>"email","value"=>"$supplier->email"]);
+	echo Form::input(["label"=>"Phone","type"=>"text","name"=>"phone","value"=>"$supplier->phone"]);
+	echo Form::input(["label"=>"Website","type"=>"text","name"=>"website","value"=>"$supplier->website"]);
+	echo Form::input(["label"=>"Address","type"=>"text","name"=>"address","value"=>"$supplier->address"]);
+	echo Form::input(["label"=>"Photo","type"=>"file","name"=>"photo","value"=>$supplier->photo]);
 
-?>
-
-
-
-<div class="d-flex justify-content-between">
-    <h3>Update Supplier</h3>
-    <a href="<?php echo $base_url?>/supplier" class="btn btn-secondary">Supplier List</a>
-    </div>
-    <form action="<?php echo $base_url?>/supplier/update" method="post" >
-        <input type="hidden" name="id" value="<?php echo $supplier->id  ?>">
-   
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name" class="form-control" value="<?php echo $supplier->name  ?>">
-
-        <label for="address">Address:</label>
-        <input type="text" name="address"id="address" class="form-control" value="<?php echo $supplier->address  ?>">
-        
-        <label for="phone">Phone:</label>
-        <input type="text" name="phone"id="phone" class="form-control" value="<?php echo $supplier->phone  ?>">
-
-        <label for="email">Eamil:</label>
-        <input type="eamil" name="email"id="email"class="form-control" value="<?php echo $supplier->email  ?>">
-
-        <label for="photo">Photo</label>
-        <input type="text" name="photo"id="photo" class="form-control" value="<?php echo $supplier->photo  ?>"> <br>
-        
-        <input type="submit" value="Update" name="update" class="btn bg-success">
-    
-    </form>
+echo Form::input(["name"=>"update","class"=>"btn btn-success offset-2" , "value"=>"Save Chanage", "type"=>"submit"]);
+echo Form::close();
+echo Page::context_close();
+echo Page::body_close();

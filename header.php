@@ -8,6 +8,9 @@
   if(!isset($_SESSION["uid"])) header("location:$base_url");
   $uid=$_SESSION["uid"];
   
+  ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 ?>
 <!doctype html>
@@ -32,6 +35,7 @@
         <!-- App Css-->
         <link href="<?php echo $base_url?>/assets/css/app.min.css"  rel="stylesheet" type="text/css" />
 
+       <script src="<?php echo $base_url?>/assets/js/jquery.js"></script>
     </head>
 
     

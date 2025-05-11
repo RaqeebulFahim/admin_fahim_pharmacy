@@ -36,8 +36,38 @@
                                         </div>
                                         <div class="text-white">
                                             <h6 class="text-uppercase mb-3 font-size-16 text-white">Orders</h6>
-                                            <h2 class="mb-4 text-white">1,587</h2>
+                                            <h2 class="mb-4 text-white"><?php echo Order::count()?></h2>
                                             <span class="badge bg-info"> +11% </span> <span class="ms-2">From previous period</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-buffer float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Revenue</h6>
+                                            <h2 class="mb-4 text-white">$ <?php // echo number_format( Order::revenue(),2) ?>
+                                            
+                                            </h2>
+                                            <span class="badge bg-danger"> -29% </span> <span class="ms-2">From previous period</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-tag-text-outline float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Purchases</h6>
+                                            <h2 class="mb-4 text-white"> <?php echo Purchase::count()?></h2>
+                                            <span class="badge bg-warning"> 0% </span> <span class="ms-2">From previous period</span>
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +80,9 @@
                                         </div>
                                         <div class="text-white">
                                             <h6 class="text-uppercase mb-3 font-size-16 text-white">Revenue</h6>
-                                            <h2 class="mb-4 text-white">$46,782</h2>
+                                            <h2 class="mb-4 text-white">$ <?php echo number_format( Order::revenue(),2) ?>
+                                            
+                                            </h2>
                                             <span class="badge bg-danger"> -29% </span> <span class="ms-2">From previous period</span>
                                         </div>
                                     </div>
@@ -60,11 +92,71 @@
                                 <div class="card mini-stat bg-primary">
                                     <div class="card-body mini-stat-img">
                                         <div class="mini-stat-icon">
+                                            <i class="mdi mdi-briefcase-check float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Product Sold</h6>
+                                            <h2 class="mb-4 text-white"><?php echo OrderDetail::count();?></h2>
+                                            <span class="badge bg-info"> +89% </span> <span class="ms-2">From previous period</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-cube-outline float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Total Stock</h6>
+                                            <h2 class="mb-4 text-white"><?php echo Stock::count_stock()?></h2>
+                                            <span class="badge bg-info"> +11% </span> <span class="ms-2">From previous period</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-buffer float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Purchases Items</h6>
+                                            <h2 class="mb-4 text-white"> <?php echo purchaseDetail::count();?></h2>
+                                            <span class="badge bg-danger"> -29% </span> <span class="ms-2">From previous period</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
+                                            <i class="mdi mdi-briefcase-check float-end"></i>
+                                        </div>
+                                        <div class="text-white">
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Product Sold</h6>
+                                            <h2 class="mb-4 text-white"><?php // echo OrderDetail::count();?></h2>
+                                            <span class="badge bg-info"> +89% </span> <span class="ms-2">From previous period</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                            <div class="col-xl-3 col-sm-6">
+                                <div class="card mini-stat bg-primary">
+                                    <div class="card-body mini-stat-img">
+                                        <div class="mini-stat-icon">
                                             <i class="mdi mdi-tag-text-outline float-end"></i>
                                         </div>
                                         <div class="text-white">
-                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Average Price</h6>
-                                            <h2 class="mb-4 text-white">$15.9</h2>
+                                            <h6 class="text-uppercase mb-3 font-size-16 text-white">Purchase Cost</h6>
+                                            <!-- <h2 class="mb-4 text-white">$15.9 $ <?php // echo number_format( Order::revenue(),2) ?></h2> -->
+                                            <h2 class="mb-4 text-white"> $ <?php echo number_format( Purchase::revenue(),2) ?></h2>
                                             <span class="badge bg-warning"> 0% </span> <span class="ms-2">From previous period</span>
                                         </div>
                                     </div>
@@ -78,7 +170,7 @@
                                         </div>
                                         <div class="text-white">
                                             <h6 class="text-uppercase mb-3 font-size-16 text-white">Product Sold</h6>
-                                            <h2 class="mb-4 text-white">1890</h2>
+                                            <h2 class="mb-4 text-white"><?php echo OrderDetail::count();?></h2>
                                             <span class="badge bg-info"> +89% </span> <span class="ms-2">From previous period</span>
                                         </div>
                                     </div>
@@ -532,7 +624,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-12">
-                                © <script>document.write(new Date().getFullYear())</script> Lexa <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                                © <script>document.write(new Date().getFullYear())</script> Fahad Medecal Store <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Raqeebul Fahim.</span>
                             </div>
                         </div>
                     </div>

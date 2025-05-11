@@ -24,7 +24,7 @@ class Stock extends Model implements JsonSerializable{
 	}
 	public function save(){
 		global $db,$tx;
-		$db->query("insert into {$tx}stock(product_id,quantity,transaction_type_id,warehouse_id,remark,created_at,updated_at)values('$this->product_id','$this->quantity','$this->transaction_type_id','$this->warehouse_id','$this->remark','$this->created_at','$this->updated_at')");
+		$db->query("insert into {$tx}stock(product_id,quantity,transaction_type_id,warehouse_id,remark)values('$this->product_id','$this->quantity','$this->transaction_type_id','$this->warehouse_id','$this->remark')");
 		return $db->insert_id;
 	}
 	public function update(){
@@ -35,7 +35,7 @@ class Stock extends Model implements JsonSerializable{
 		global $db,$tx;
 		$db->query("delete from {$tx}stock where id={$id}");
 	}
-	public function jsonSerialize(){
+	public function jsonSerialize():mixed{
 		return get_object_vars($this);
 	}
 	public static function all(){
@@ -60,6 +60,12 @@ class Stock extends Model implements JsonSerializable{
 	public static function count($criteria=""){
 		global $db,$tx;
 		$result =$db->query("select count(*) from {$tx}stock $criteria");
+		list($count)=$result->fetch_row();
+			return $count;
+	}
+	public static function count_stock($criteria=""){
+		global $db,$tx;
+		$result =$db->query("select sum(quantity) count from {$tx}stock $criteria ");
 		list($count)=$result->fetch_row();
 			return $count;
 	}
@@ -108,13 +114,16 @@ class Stock extends Model implements JsonSerializable{
 		list($total_rows)=$count_result->fetch_row();
 		$total_pages = ceil($total_rows /$perpage);
 		$top = ($page - 1)*$perpage;
-		$result=$db->query("select id,product_id,quantity,transaction_type_id,warehouse_id,remark,created_at,updated_at from {$tx}stock $criteria limit $top,$perpage");
+
+		// SELECT s.product_id ,p.name , sum(s.quantity) qty   FROM stock s join products p on p.id = s.product_id   group by product_id;
+
+		$result=$db->query("select s.id, p.name product_id ,sum(s.quantity) quantity,transaction_type_id,warehouse_id,remark,s.created_at,s.updated_at from {$tx}stock s  join {$tx}products p on p.id = s.product_id group by s.product_id $criteria limit $top,$perpage");
 		$html="<table class='table'>";
 			$html.="<tr><th colspan='3'>".Html::link(["class"=>"btn btn-success","route"=>"stock/create","text"=>"New Stock"])."</th></tr>";
 		if($action){
-			$html.="<tr><th>Id</th><th>Product Id</th><th>Quantity</th><th>Transaction Type Id</th><th>Warehouse Id</th><th>Remark</th><th>Created At</th><th>Updated At</th><th>Action</th></tr>";
+			$html.="<tr><th>Id</th><th>Product</th><th>Quantity</th><th>Transaction Type Id</th><th>Warehouse Id</th><th>Remark</th><th>Created At</th><th>Updated At</th><th>Action</th></tr>";
 		}else{
-			$html.="<tr><th>Id</th><th>Product Id</th><th>Quantity</th><th>Transaction Type Id</th><th>Warehouse Id</th><th>Remark</th><th>Created At</th><th>Updated At</th></tr>";
+			$html.="<tr><th>Id</th><th>Product</th><th>Quantity</th><th>Transaction Type Id</th><th>Warehouse Id</th><th>Remark</th><th>Created At</th><th>Updated At</th></tr>";
 		}
 		while($stock=$result->fetch_object()){
 			$action_buttons = "";

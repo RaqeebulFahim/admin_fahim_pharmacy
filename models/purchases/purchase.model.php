@@ -41,7 +41,7 @@ class Purchase extends Model implements JsonSerializable{
 		global $db,$tx;
 		$db->query("delete from {$tx}purchases where id={$id}");
 	}
-	public function jsonSerialize(){
+	public function jsonSerialize():mixed{
 		return get_object_vars($this);
 	}
 	public static function all(){
@@ -66,6 +66,13 @@ class Purchase extends Model implements JsonSerializable{
 	public static function count($criteria=""){
 		global $db,$tx;
 		$result =$db->query("select count(*) from {$tx}purchases $criteria");
+		list($count)=$result->fetch_row();
+			return $count;
+	}
+
+	public static function revenue($criteria=""){
+		global $db,$tx;
+		$result =$db->query("select sum(total_amount) count from {$tx}purchases $criteria");
 		list($count)=$result->fetch_row();
 			return $count;
 	}
@@ -121,9 +128,15 @@ class Purchase extends Model implements JsonSerializable{
 		$html="<table class='table'>";
 			$html.="<tr><th colspan='3'>".Html::link(["class"=>"btn btn-success","route"=>"purchase/create","text"=>"New Purchase"])."</th></tr>";
 		if($action){
-			$html.="<tr><th>Id</th><th>Supplier Id</th><th>Total Order</th><th>Purchase Date</th><th>Total Discount</th><th>Total Amount</th><th>Paid Amount</th><th>Status</th><th>Shipping Address</th><th>Created At</th><th>Updated At</th><th>Action</th></tr>";
+			$html.="<tr><th>Id</th><th>Supplier Id</th><th>Total Order</th><th>Purchase Date</th><th>Total Discount</th><th>Total Amount</th><th>Paid Amount</th><th>Status</th><th>Shipping Address</th><th>Action</th></tr>";
+			
+// 			<th>Created At</th><th>Updated At</th>
+
 		}else{
-			$html.="<tr><th>Id</th><th>Supplier Id</th><th>Total Order</th><th>Purchase Date</th><th>Total Discount</th><th>Total Amount</th><th>Paid Amount</th><th>Status</th><th>Shipping Address</th><th>Created At</th><th>Updated At</th></tr>";
+			$html.="<tr><th>Id</th><th>Supplier Id</th><th>Total Order</th><th>Purchase Date</th><th>Total Discount</th><th>Total Amount</th><th>Paid Amount</th><th>Status</th><th>Shipping Address</th></tr>";
+			
+// 			<th>Created At</th><th>Updated At</th>
+			
 		}
 		while($purchase=$result->fetch_object()){
 			$action_buttons = "";
@@ -134,7 +147,10 @@ class Purchase extends Model implements JsonSerializable{
 				$action_buttons.= Event::button(["name"=>"delete", "value"=>"Delete", "class"=>"btn btn-danger", "route"=>"purchase/confirm/$purchase->id"]);
 				$action_buttons.= "</div></td>";
 			}
-			$html.="<tr><td>$purchase->id</td><td>$purchase->supplier_id</td><td>$purchase->total_order</td><td>$purchase->Purchase_date</td><td>$purchase->total_discount</td><td>$purchase->total_amount</td><td>$purchase->paid_amount</td><td>$purchase->status</td><td>$purchase->shipping_address</td><td>$purchase->created_at</td><td>$purchase->updated_at</td> $action_buttons</tr>";
+			$html.="<tr><td>$purchase->id</td><td>$purchase->supplier_id</td><td>$purchase->total_order</td><td>$purchase->Purchase_date</td><td>$purchase->total_discount</td><td>$purchase->total_amount</td><td>$purchase->paid_amount</td><td>$purchase->status</td><td>$purchase->shipping_address</td> $action_buttons</tr>";
+			
+// 			<td>$purchase->created_at</td><td>$purchase->updated_at</td>
+			
 		}
 		$html.="</table>";
 		$html.= pagination($page,$total_pages);
@@ -155,8 +171,8 @@ class Purchase extends Model implements JsonSerializable{
 		$html.="<tr><th>Paid Amount</th><td>$purchase->paid_amount</td></tr>";
 		$html.="<tr><th>Status</th><td>$purchase->status</td></tr>";
 		$html.="<tr><th>Shipping Address</th><td>$purchase->shipping_address</td></tr>";
-		$html.="<tr><th>Created At</th><td>$purchase->created_at</td></tr>";
-		$html.="<tr><th>Updated At</th><td>$purchase->updated_at</td></tr>";
+// 		$html.="<tr><th>Created At</th><td>$purchase->created_at</td></tr>";
+// 		$html.="<tr><th>Updated At</th><td>$purchase->updated_at</td></tr>";
 
 		$html.="</table>";
 		return $html;

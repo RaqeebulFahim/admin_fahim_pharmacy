@@ -3,10 +3,10 @@ class CustomerController extends Controller{
 	public function __construct(){
 	}
 	public function index(){
-		view("Sales");
+		view("sales");
 	}
 	public function create(){
-		view("Sales");
+		view("sales");
 	}
 public function save($data,$file){
 	if(isset($data["create"])){

@@ -3,10 +3,10 @@ class SaleController extends Controller{
 	public function __construct(){
 	}
 	public function index(){
-		view("Sales");
+		view("sales");
 	}
 	public function create(){
-		view("Sales");
+		view("sales");
 	}
 public function save($data,$file){
 	if(isset($data["create"])){
@@ -27,13 +27,12 @@ public function save($data,$file){
 	if(!preg_match("/^[\s\S]+$/",$data["net_amount"])){
 		$errors["net_amount"]="Invalid net_amount";
 	}
-	if(!preg_match("/^[\s\S]+$/",$data["user_id"])){
-		$errors["user_id"]="Invalid user_id";
+	if(!preg_match("/^[\s\S]+$/",$data["customer_id"])){
+		$errors["customer_id"]="Invalid customer_id";
 	}
 
 */
 		if(count($errors)==0){
-			global $now;
 			$sale=new Sale();
 		$sale->customer_name=$data["customer_name"];
 		$sale->customer_contact=$data["customer_contact"];
@@ -41,7 +40,7 @@ public function save($data,$file){
 		$sale->discount_amount=$data["discount_amount"];
 		$sale->net_amount=$data["net_amount"];
 		$sale->sale_date=date("Y-m-d",strtotime($data["sale_date"]));
-		$sale->user_id=$data["user_id"];
+		$sale->customer_id=$data["customer_id"];
 		$sale->created_at=$now;
 		$sale->updated_at=$now;
 
@@ -53,7 +52,7 @@ public function save($data,$file){
 	}
 }
 public function edit($id){
-		view("Sales",Sale::find($id));
+		view("sales",Sale::find($id));
 }
 public function update($data,$file){
 	if(isset($data["update"])){
@@ -74,13 +73,12 @@ public function update($data,$file){
 	if(!preg_match("/^[\s\S]+$/",$data["net_amount"])){
 		$errors["net_amount"]="Invalid net_amount";
 	}
-	if(!preg_match("/^[\s\S]+$/",$data["user_id"])){
-		$errors["user_id"]="Invalid user_id";
+	if(!preg_match("/^[\s\S]+$/",$data["customer_id"])){
+		$errors["customer_id"]="Invalid customer_id";
 	}
 
 */
 		if(count($errors)==0){
-			global $now;
 			$sale=new Sale();
 			$sale->id=$data["id"];
 		$sale->customer_name=$data["customer_name"];
@@ -89,7 +87,7 @@ public function update($data,$file){
 		$sale->discount_amount=$data["discount_amount"];
 		$sale->net_amount=$data["net_amount"];
 		$sale->sale_date=date("Y-m-d",strtotime($data["sale_date"]));
-		$sale->user_id=$data["user_id"];
+		$sale->customer_id=$data["customer_id"];
 		$sale->created_at=$now;
 		$sale->updated_at=$now;
 
@@ -101,14 +99,14 @@ public function update($data,$file){
 	}
 }
 	public function confirm($id){
-		view("Sales");
+		view("sales");
 	}
 	public function delete($id){
 		Sale::delete($id);
 		redirect();
 	}
 	public function show($id){
-		view("Sales",Sale::find($id));
+		view("sales",Sale::find($id));
 	}
 }
 ?>

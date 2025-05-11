@@ -51,7 +51,7 @@
 <html lang="en">
 
     
-<!-- Mirrored from themesbrand.com/lexa/layouts/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 06:29:39 GMT -->
+
 <head>
 
         <meta charset="utf-8" />
@@ -144,5 +144,5 @@
     </body>
 
 
-<!-- Mirrored from themesbrand.com/lexa/layouts/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 06:29:39 GMT -->
+
 </html>

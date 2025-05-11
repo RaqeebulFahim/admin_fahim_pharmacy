@@ -2,7 +2,7 @@
 
 class UserApi extends Api{
 	public function __construct(){
-
+		// i have to pass this part of code to others api's construction to secure api
           if(!$this->authorized()){   
 		    
 			if ($_SERVER['REQUEST_METHOD'] == 'GET') {			  
@@ -11,6 +11,7 @@ class UserApi extends Api{
 			}
 			
          }		
+		 // passing code end here
 	}
 	function index(){
 		

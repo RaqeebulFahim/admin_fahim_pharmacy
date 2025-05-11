@@ -5,7 +5,7 @@
             <div class="navbar-brand-box">
                 <a href="<?php global   $base_url; echo $base_url?>/home" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/Raqeebul Fahim.png" alt="" height="70">
+                        <img src="assets/images/Raqeebul Fahim.png" alt="" height="35">
                     </span>
                     <span class="logo-lg">
                         <img src="assets/images/Raqeebul Fahim.png" alt="" height="70">
@@ -14,7 +14,7 @@
 
                 <a href="<?php global   $base_url; echo $base_url?>/home" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/Raqeebul Fahim.png" alt="" height="70">
+                        <img src="assets/images/Raqeebul Fahim.png" alt="" height="35">
                     </span>
                     <span class="logo-lg">
                         <img src="assets/images/Raqeebul Fahim.png" alt="" height="70">

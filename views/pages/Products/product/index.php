@@ -1,8 +1,8 @@
-<div class="d-flex justify-content-between">
-    <h3>Product List</h3>
-    <a href="<?php echo $base_url ?>/product/create" class="btn btn-success">Create Product</a>
-    </div><br>
-
-    <?php
-     echo product::display();
-    ?>
+<?php
+echo Page::title(["title"=>"Manage Product"]);
+echo Page::body_open();
+echo Page::context_open();
+$page = isset($_GET["page"]) ?$_GET["page"]:1;
+echo Product::html_table($page,10);
+echo Page::context_close();
+echo Page::body_close();

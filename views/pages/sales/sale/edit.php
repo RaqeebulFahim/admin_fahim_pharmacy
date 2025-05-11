@@ -11,7 +11,7 @@ echo Form::open(["route"=>"sale/update"]);
 	echo Form::input(["label"=>"Discount Amount","type"=>"text","name"=>"discount_amount","value"=>"$sale->discount_amount"]);
 	echo Form::input(["label"=>"Net Amount","type"=>"text","name"=>"net_amount","value"=>"$sale->net_amount"]);
 	echo Form::input(["label"=>"Sale Date","type"=>"date","name"=>"sale_date","value"=>"$sale->sale_date"]);
-	echo Form::input(["label"=>"User","name"=>"user_id","table"=>"users","value"=>"$sale->user_id"]);
+	echo Form::input(["label"=>"Customer","name"=>"customer_id","table"=>"customers","value"=>"$sale->customer_id"]);
 
 echo Form::input(["name"=>"update","class"=>"btn btn-success offset-2" , "value"=>"Save Chanage", "type"=>"submit"]);
 echo Form::close();

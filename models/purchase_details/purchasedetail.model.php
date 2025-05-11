@@ -9,10 +9,13 @@ class PurchaseDetail extends Model implements JsonSerializable{
 	public $total_price;
 	public $created_at;
 	public $updated_at;
+	public $total_order;
+	public $total_amount;
+	public $purchase_date;
 
 	public function __construct(){
 	}
-	public function set($id,$purchase_id,$product_id,$quantity,$price,$discount,$total_price,$created_at,$updated_at){
+	public function set($id,$purchase_id,$product_id,$quantity,$price,$discount,$total_price,$total_order,$total_amount,$purchase_date,$created_at,$updated_at){
 		$this->id=$id;
 		$this->purchase_id=$purchase_id;
 		$this->product_id=$product_id;
@@ -22,6 +25,9 @@ class PurchaseDetail extends Model implements JsonSerializable{
 		$this->total_price=$total_price;
 		$this->created_at=$created_at;
 		$this->updated_at=$updated_at;
+		$this->total_order=$total_order;
+		$this->total_amount=$total_amount;
+		$this->purchase_date=$purchase_date;
 
 	}
 	public function save(){
@@ -37,7 +43,7 @@ class PurchaseDetail extends Model implements JsonSerializable{
 		global $db,$tx;
 		$db->query("delete from {$tx}purchase_details where id={$id}");
 	}
-	public function jsonSerialize(){
+	public function jsonSerialize():mixed{
 		return get_object_vars($this);
 	}
 	public static function all(){
@@ -70,6 +76,15 @@ class PurchaseDetail extends Model implements JsonSerializable{
 		$result =$db->query("select id,purchase_id,product_id,quantity,price,discount,total_price,created_at,updated_at from {$tx}purchase_details where id='$id'");
 		$purchasedetail=$result->fetch_object();
 			return $purchasedetail;
+	}
+	public static function find_details($id){
+		global $db,$tx;
+		$result =$db->query("select id,purchase_id,product_id,quantity,price,discount,total_price,created_at,updated_at from {$tx}purchase_details where purchase_id='$id'");
+		$data=[];
+		while($purchasedetail=$result->fetch_object()){
+			$data[]=$purchasedetail;
+		}
+			return $data;
 	}
 	static function get_last_id(){
 		global $db,$tx;

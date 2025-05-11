@@ -1,26 +1,8 @@
-<div class="d-flex justify-content-between">
-<h3>Supplier List</h3>
-<a href="<?php echo $base_url?>/Supplier/create" class="btn btn-success">Create Supplier</a>
-    </div><br>
-
-
-    
-    <?php
-     echo Supplier::display();
-    ?>
-<!-- <table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>helal</td>
-            <td>Helal@gmail.com</td>
-        </tr>
-    </tbody>
-</table> -->
-
+<?php
+echo Page::title(["title"=>"Manage Supplier"]);
+echo Page::body_open();
+echo Page::context_open();
+$page = isset($_GET["page"]) ?$_GET["page"]:1;
+echo Supplier::html_table($page,10);
+echo Page::context_close();
+echo Page::body_close();

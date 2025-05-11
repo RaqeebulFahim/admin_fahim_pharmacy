@@ -41,59 +41,59 @@
         </li>
         <!--Table - 4: uom table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/uom" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/uom" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> uom</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 5: Warehouse table for project_pharmacy erp fahim  -->
-
+<!-- 
         <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Warehouse" class="waves-effect">
+            <a href="<?php //  global   $base_url; echo $base_url ?>/Warehouse" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Warehouse</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 6: Stock_adjustment table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/StockAdjustment" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/StockAdjustment" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Stock_adjustment</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 7: Adjustment_type table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/AdjustmentType" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/AdjustmentType" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Adjustment_type</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 8: Stock_adjusttment_detail table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/StockAdjustmentDetail" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/StockAdjustmentDetail" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Stock_adj_detail</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 9: Transaction_type table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/TransactionType" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/TransactionType" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Transaction_type</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 10: Status table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Status" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/Statu" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Status</span>
             </a>
-        </li>
+        </li> -->
 
     </ul>
 
@@ -131,35 +131,35 @@
 
     <!--Table - 1: Sales table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Sale" class="waves-effect">
-                <i class="mdi mdi-transfer"></i> <span> Sales </span>
-            </a>
-        </li>
+        <!--<li>-->
+        <!--    <a href="<?php // global   $base_url; echo $base_url ?>/sale" class="waves-effect">-->
+        <!--        <i class="mdi mdi-transfer"></i> <span> Sales </span>-->
+        <!--    </a>-->
+        <!--</li>-->
 
         <!--Table - 2: Order table for project_pharmacy erp fahim  -->
 
         <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Order" class="waves-effect">
+            <a href="<?php global   $base_url; echo $base_url ?>/order" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Order</span>
             </a>
         </li>
 
         <!--Table - 3: Order_detail table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/OrderDetail" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/OrderDetail" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Order_detail</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 4: Customer table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Customer" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/Customer" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Customer</span>
             </a>
-        </li>
+        </li> -->
 
     </ul>
 </li>
@@ -184,31 +184,31 @@
         <!--Table - 1: Purchase table for project_pharmacy erp fahim  -->
 
         <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Purchase" class="waves-effect">
+            <a href="<?php global   $base_url; echo $base_url ?>/purchase" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Purchase</span>
             </a>
         </li>
 
         <!--Table - 2: Purchase_detail table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/PurchaseDetail" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/PurchaseDetail" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Purchase_detail</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 3: Supplier table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/supplier" class="waves-effect">
+        <!-- <li>
+            <a href="<?php // global   $base_url; echo $base_url ?>/supplier" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Supplier</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 4: Supplier_return table for project_pharmacy erp fahim  -->
 
         <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/SupplierReturn" class="waves-effect">
+            <a href="<?php global   $base_url; echo $base_url ?>/supplierReturn" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Supplier Return</span>
             </a>
         </li>
@@ -235,7 +235,7 @@
         <!--Table - 1: Customer table for project_pharmacy erp fahim  -->
 
         <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Customer" class="waves-effect">
+            <a href="<?php global   $base_url; echo $base_url ?>/customer" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Customer</span>
             </a>
         </li>
@@ -250,7 +250,7 @@
         <!--Table - 3: Manufacturer table for project_pharmacy erp fahim  -->
 
         <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Manufacturer" class="waves-effect">
+            <a href="<?php global   $base_url; echo $base_url ?>/manufacturer" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Manufacturer</span>
             </a>
         </li>
@@ -275,31 +275,31 @@
     <ul class="sub-menu" aria-expanded="false">
         <!--Table - 1: Sale table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Sale" class="waves-effect">
-                <i class="mdi mdi-transfer"></i> <span> Sale</span>
-            </a>
-        </li>
+        <!--<li>-->
+        <!--    <a href="<?php // global   $base_url; echo $base_url ?>/sale" class="waves-effect">-->
+        <!--        <i class="mdi mdi-transfer"></i> <span> Sale</span>-->
+        <!--    </a>-->
+        <!--</li>-->
         <!--Table - 2: Purchase table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Purchase" class="waves-effect">
-                <i class="mdi mdi-transfer"></i> <span> Purchase</span>
-            </a>
-        </li>
+        <!--<li>-->
+        <!--    <a href="<?php // global   $base_url; echo $base_url ?>/purchase" class="waves-effect">-->
+        <!--        <i class="mdi mdi-transfer"></i> <span> Purchase</span>-->
+        <!--    </a>-->
+        <!--</li>-->
 
         <!--Table - 3: Supplier_return table for project_pharmacy erp fahim  -->
 
-        <li>
+        <!-- <li>
             <a href="<?php global   $base_url; echo $base_url ?>/supplierReturn" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Supplier_return</span>
             </a>
-        </li>
+        </li> -->
 
         <!--Table - 4: Stock_adjustment table for project_pharmacy erp fahim  -->
 
         <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/StockAdjustment" class="waves-effect">
+            <a href="<?php global   $base_url; echo $base_url?>/stockAdjustment" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> Stock_adjustment</span>
             </a>
         </li>
@@ -326,18 +326,18 @@
         <!--Table - 1: User table for project_pharmacy erp fahim  -->
 
         <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/User" class="waves-effect">
+            <a href="<?php global   $base_url; echo $base_url ?>/user" class="waves-effect">
                 <i class="mdi mdi-transfer"></i> <span> User</span>
             </a>
         </li>
 
         <!--Table - 2: Role table for project_pharmacy erp fahim  -->
 
-        <li>
-            <a href="<?php global   $base_url; echo $base_url ?>/Role" class="waves-effect">
-                <i class="mdi mdi-transfer"></i> <span> Role</span>
-            </a>
-        </li>
+        <!--<li>-->
+        <!--    <a href="<?php global   $base_url; echo $base_url ?>/role" class="waves-effect">-->
+        <!--        <i class="mdi mdi-transfer"></i> <span> Role</span>-->
+        <!--    </a>-->
+        <!--</li>-->
 
         </ul>
 </li>
@@ -352,7 +352,7 @@
 </li> -->
 
 <!--End  User Control of pharmacy management erp fahim  -->
-
+<!-- 
 <li>
 <li>
     <a href="calendar.html" class=" waves-effect">
@@ -574,7 +574,7 @@
             </ul>
         </li>
     </ul>
-</li>
+</li> -->
 
 <!-- Log out session for project_pharmacy erp fahim  -->
 

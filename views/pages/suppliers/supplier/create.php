@@ -1,24 +1,17 @@
-<div class="d-flex justify-content-between">
-    <h3>Add Supplier</h3>
-    <a href="<?php echo $base_url?>/Supplier" class="btn btn-secondary"> Supplier List</a>
-    </div>
-    <form action="<?php echo $base_url ?>/supplier/save"
-        method="post">
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name" class="form-control">
+<?php
+echo Page::title(["title"=>"Create Supplier"]);
+echo Page::body_open();
+echo Html::link(["class"=>"btn btn-success", "route"=>"supplier", "text"=>"Manage Supplier"]);
+echo Page::context_open();
+echo Form::open(["route"=>"supplier/save"]);
+	echo Form::input(["label"=>"Name","type"=>"text","name"=>"name"]);
+	echo Form::input(["label"=>"Email","type"=>"text","name"=>"email"]);
+	echo Form::input(["label"=>"Phone","type"=>"text","name"=>"phone"]);
+	echo Form::input(["label"=>"Website","type"=>"text","name"=>"website"]);
+	echo Form::input(["label"=>"Address","type"=>"text","name"=>"address"]);
+	echo Form::input(["label"=>"Photo","type"=>"file","name"=>"photo"]);
 
-        <label for="address">Address:</label>
-        <input type="text" name="address" id="address" class="form-control">
-
-        <label for="phone">Phone:</label>
-        <input type="text" name="phone" id="phone" class="form-control">
-
-        <label for="email">Eamil:</label>
-        <input type="eamil" name="email" id="email" class="form-control">
-
-        <label for="photo">Photo</label>
-        <input type="text" name="photo" id="photo" class="form-control">
-
-        <input type="submit" name="submit" class="btn bg-success">
-</form>
-
+echo Form::input(["name"=>"create","class"=>"btn btn-primary offset-2", "value"=>"Save", "type"=>"submit"]);
+echo Form::close();
+echo Page::context_close();
+echo Page::body_close();
