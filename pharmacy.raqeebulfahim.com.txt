@@ -1,0 +1,4 @@
+if the root file does not work after putting user name and password 
+
+check the .htaccess file is exists or not, if not then copy if from local server and paste in root folder;
+.htacess file defines the route. 
